@@ -75,7 +75,7 @@ tr:last-child td{border-bottom:none}
 .prog{background:var(--card);border:1px solid var(--bd);border-radius:6px;padding:14px 18px;margin-bottom:14px}
 .prog-h{display:flex;justify-content:space-between;font-size:11px;color:var(--i2);margin-bottom:8px;font-weight:600}
 .bar{height:12px;background:var(--c3);border-radius:8px;overflow:hidden}
-.bar i{display:block;height:100%;width:20.5%;background:linear-gradient(90deg,#b08d4a,#e0c37e)}
+.bar i{display:block;height:100%;width:22.7%;background:linear-gradient(90deg,#b08d4a,#e0c37e)}
 .prog-f{display:flex;justify-content:space-between;font-size:10px;color:var(--i3);margin-top:6px}
 @media(max-width:700px){.kpis{grid-template-columns:repeat(2,1fr)}.g2,.db-g{grid-template-columns:1fr}.pane{padding:12px}.hdr-t{flex-direction:column;align-items:flex-start;gap:8px}.hdr-m{text-align:left}}
 </style>
@@ -88,11 +88,11 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 <div class="kpis">
-  <div class="kpi"><div class="kl">Ventas Totales</div><div class="kv g">$355.000</div><div class="kd">9 puntos vendidos</div></div>
-  <div class="kpi"><div class="kl">Utilidad Neta</div><div class="kv a">$109.545</div><div class="kd">Margen 30,9% · ROI 9,1%</div></div>
+  <div class="kpi"><div class="kl">Ventas Totales</div><div class="kv g">$405.000</div><div class="kd">10 puntos vendidos</div></div>
+  <div class="kpi"><div class="kl">Utilidad Neta</div><div class="kv a">$132.273</div><div class="kd">Margen 32,7% · ROI 11,0%</div></div>
   <div class="kpi"><div class="kl">Inversión</div><div class="kv b">$1.200.000</div><div class="kd">2 cocinas · 44 puntos</div></div>
   <div class="kpi"><div class="kl">Cobrado</div><div class="kv g">$175.000</div><div class="kd">5 puntos pagados</div></div>
-  <div class="kpi"><div class="kl">Por Cobrar</div><div class="kv w">$180.000</div><div class="kd">4 puntos · vence 31 Oct</div></div>
+  <div class="kpi"><div class="kl">Por Cobrar</div><div class="kv w">$230.000</div><div class="kd">5 puntos · vence 31 Oct</div></div>
 </div>
 <div class="tabs">
   <div class="tab on" onclick="S('db')">Resumen</div>
@@ -106,32 +106,32 @@ tr:last-child td{border-bottom:none}
 <!-- RESUMEN -->
 <div class="pane on" id="tab-db">
   <div class="prog">
-    <div class="prog-h"><span>Avance de ventas</span><span>9 de 44 puntos · 20,5%</span></div>
+    <div class="prog-h"><span>Avance de ventas</span><span>10 de 44 puntos · 22,7%</span></div>
     <div class="bar"><i></i></div>
-    <div class="prog-f"><span>9 vendidos</span><span>35 disponibles</span></div>
+    <div class="prog-f"><span>10 vendidos</span><span>34 disponibles</span></div>
   </div>
   <div class="db-g">
     <div class="db-c"><div class="db-l">Puntos Totales</div><div class="db-v au">44</div><div class="db-s">2 cocinas × 22 puntos</div></div>
-    <div class="db-c"><div class="db-l">Puntos Vendidos</div><div class="db-v pos">9</div><div class="db-s">Felipe 6 · Camilo 3</div></div>
-    <div class="db-c"><div class="db-l">Puntos Disponibles</div><div class="db-v bl">35</div><div class="db-s">Inventario por vender</div></div>
+    <div class="db-c"><div class="db-l">Puntos Vendidos</div><div class="db-v pos">10</div><div class="db-s">Felipe 7 · Camilo 3</div></div>
+    <div class="db-c"><div class="db-l">Puntos Disponibles</div><div class="db-v bl">34</div><div class="db-s">Inventario por vender</div></div>
     <div class="db-c"><div class="db-l">Costo por Punto</div><div class="db-v">$27.273</div><div class="db-s">$1.200.000 ÷ 44 puntos</div></div>
-    <div class="db-c"><div class="db-l">Precio Promedio</div><div class="db-v pos">$39.444</div><div class="db-s">Rango de mercado: $35.000 – $60.000</div></div>
-    <div class="db-c"><div class="db-l">Margen por Punto</div><div class="db-v au">$12.172</div><div class="db-s">30,9% sobre el precio de venta</div></div>
-    <div class="db-c"><div class="db-l">Utilidad Bruta</div><div class="db-v pos">$109.545</div><div class="db-s">Ventas − costo de puntos vendidos</div></div>
+    <div class="db-c"><div class="db-l">Precio Promedio</div><div class="db-v pos">$40.500</div><div class="db-s">Rango de mercado: $35.000 – $60.000</div></div>
+    <div class="db-c"><div class="db-l">Margen por Punto</div><div class="db-v au">$13.227</div><div class="db-s">32,7% sobre el precio de venta</div></div>
+    <div class="db-c"><div class="db-l">Utilidad Bruta</div><div class="db-v pos">$132.273</div><div class="db-s">Ventas − costo de puntos vendidos</div></div>
     <div class="db-c"><div class="db-l">Caja Actual</div><div class="db-v bl">$175.000</div><div class="db-s">Cobros recibidos</div></div>
-    <div class="db-c"><div class="db-l">Cuentas por Cobrar</div><div class="db-v warn">$180.000</div><div class="db-s">Felipe $130.000 · Camilo $50.000</div></div>
+    <div class="db-c"><div class="db-l">Cuentas por Cobrar</div><div class="db-v warn">$230.000</div><div class="db-s">Felipe $180.000 · Camilo $50.000</div></div>
   </div>
   <div class="box">
-    <div class="bh">Proyección de Cierre <em>Si se venden los 35 puntos restantes</em></div>
+    <div class="bh">Proyección de Cierre <em>Si se venden los 34 puntos restantes</em></div>
     <table>
       <thead><tr><th style="text-align:left">Escenario de precio</th><th>Precio/punto</th><th>Ingreso restante</th><th>Ingreso total</th><th>Utilidad total</th><th>ROI</th></tr></thead>
       <tbody>
-      <tr><td>Conservador (mínimo)</td><td class="r">$35.000</td><td class="r">$1.225.000</td><td class="r">$1.580.000</td><td class="r pos">$380.000</td><td class="r au">31,7%</td></tr>
-      <tr><td>Intermedio</td><td class="r">$47.500</td><td class="r">$1.662.500</td><td class="r">$2.017.500</td><td class="r pos">$817.500</td><td class="r au">68,1%</td></tr>
-      <tr><td>Optimista (máximo)</td><td class="r">$60.000</td><td class="r">$2.100.000</td><td class="r">$2.455.000</td><td class="r pos">$1.255.000</td><td class="r au">104,6%</td></tr>
+      <tr><td>Conservador (mínimo)</td><td class="r">$35.000</td><td class="r">$1.190.000</td><td class="r">$1.595.000</td><td class="r pos">$395.000</td><td class="r au">32,9%</td></tr>
+      <tr><td>Intermedio</td><td class="r">$47.500</td><td class="r">$1.615.000</td><td class="r">$2.020.000</td><td class="r pos">$820.000</td><td class="r au">68,3%</td></tr>
+      <tr><td>Optimista (máximo)</td><td class="r">$60.000</td><td class="r">$2.040.000</td><td class="r">$2.445.000</td><td class="r pos">$1.245.000</td><td class="r au">103,8%</td></tr>
       </tbody>
     </table>
-    <div class="note na">Las ventas ya realizadas (9 puntos, $355.000) se mantienen. La proyección solo varía el precio de los 35 puntos que aún no se venden. Punto de equilibrio: vendiendo los 35 restantes a ~$24.143 c/u se recupera toda la inversión. Antes de comisiones y gastos de envío.</div>
+    <div class="note na">Las ventas ya realizadas (10 puntos, $405.000) se mantienen. La proyección solo varía el precio de los 34 puntos que aún no se venden. Punto de equilibrio: vendiendo los 34 restantes a ~$23.382 c/u se recupera toda la inversión. Antes de comisiones y gastos de envío.</div>
   </div>
 </div>
 
@@ -142,9 +142,9 @@ tr:last-child td{border-bottom:none}
     <table>
       <thead><tr><th style="text-align:left">Vendedor</th><th>Vendidos</th><th>Pagados</th><th>Pendientes</th><th>Precio prom.</th><th>Total vendido</th><th>Cobrado</th><th>Por cobrar</th></tr></thead>
       <tbody>
-      <tr><td>Felipe Vargas</td><td class="r">6</td><td class="r pos">3</td><td class="r warn">3</td><td class="r">$39.167</td><td class="r">$235.000</td><td class="r pos">$105.000</td><td class="r warn">$130.000</td></tr>
+      <tr><td>Felipe Vargas</td><td class="r">7</td><td class="r pos">3</td><td class="r warn">4</td><td class="r">$40.714</td><td class="r">$285.000</td><td class="r pos">$105.000</td><td class="r warn">$180.000</td></tr>
       <tr><td>Camilo Cuellar</td><td class="r">3</td><td class="r pos">2</td><td class="r warn">1</td><td class="r">$40.000</td><td class="r">$120.000</td><td class="r pos">$70.000</td><td class="r warn">$50.000</td></tr>
-      <tr class="rtot"><td><strong>TOTAL</strong></td><td class="r"><strong>9</strong></td><td class="r pos"><strong>5</strong></td><td class="r warn"><strong>4</strong></td><td class="r"><strong>$39.444</strong></td><td class="r"><strong>$355.000</strong></td><td class="r pos"><strong>$175.000</strong></td><td class="r warn"><strong>$180.000</strong></td></tr>
+      <tr class="rtot"><td><strong>TOTAL</strong></td><td class="r"><strong>10</strong></td><td class="r pos"><strong>5</strong></td><td class="r warn"><strong>5</strong></td><td class="r"><strong>$40.500</strong></td><td class="r"><strong>$405.000</strong></td><td class="r pos"><strong>$175.000</strong></td><td class="r warn"><strong>$230.000</strong></td></tr>
       </tbody>
     </table>
   </div>
@@ -155,12 +155,12 @@ tr:last-child td{border-bottom:none}
       <tbody>
       <tr><td>Felipe Vargas</td><td>Pago recibido</td><td class="r">3</td><td class="r">$35.000</td><td class="r pos">$105.000</td><td class="r"><span class="chip cg">COBRADO ✓</span></td></tr>
       <tr><td>Felipe Vargas</td><td>Pendiente de pago</td><td class="r">2</td><td class="r">$40.000</td><td class="r warn">$80.000</td><td class="r"><span class="chip cw">Vence 31/10</span></td></tr>
-      <tr><td>Felipe Vargas</td><td>Pendiente de pago</td><td class="r">1</td><td class="r">$50.000</td><td class="r warn">$50.000</td><td class="r"><span class="chip cw">Vence 31/10</span></td></tr>
+      <tr><td>Felipe Vargas</td><td>Pendiente de pago</td><td class="r">2</td><td class="r">$50.000</td><td class="r warn">$100.000</td><td class="r"><span class="chip cw">Vence 31/10</span></td></tr>
       <tr><td>Camilo Cuellar</td><td>Pago recibido</td><td class="r">2</td><td class="r">$35.000</td><td class="r pos">$70.000</td><td class="r"><span class="chip cg">COBRADO ✓</span></td></tr>
       <tr><td>Camilo Cuellar</td><td>Pendiente de pago</td><td class="r">1</td><td class="r">$50.000</td><td class="r warn">$50.000</td><td class="r"><span class="chip cw">Vence 31/10</span></td></tr>
       </tbody>
     </table>
-    <div class="note nw">⚠ El 31 de octubre vencen $180.000 en total (4 puntos): Felipe $130.000 y Camilo $50.000. Las comisiones a vendedores aún no están registradas (ver Nota 6).</div>
+    <div class="note nw">⚠ El 31 de octubre vencen $230.000 en total (5 puntos): Felipe $180.000 y Camilo $50.000. Las comisiones a vendedores aún no están registradas (ver Nota 6).</div>
   </div>
 </div>
 
@@ -172,13 +172,13 @@ tr:last-child td{border-bottom:none}
       <table><tbody>
         <tr class="rg"><td colspan="2">Activo Corriente</td></tr>
         <tr><td class="i1">Caja y Equivalentes <span class="chip ca">Nota 3</span></td><td class="r bl">$175.000</td></tr>
-        <tr><td class="i1">CXC — Felipe Vargas <span class="chip cw">31/10</span></td><td class="r warn">$130.000</td></tr>
+        <tr><td class="i1">CXC — Felipe Vargas <span class="chip cw">31/10</span></td><td class="r warn">$180.000</td></tr>
         <tr><td class="i1">CXC — Camilo Cuellar <span class="chip cw">31/10</span></td><td class="r warn">$50.000</td></tr>
-        <tr class="rsub"><td><strong>Total Activo Corriente</strong></td><td class="r"><strong>$355.000</strong></td></tr>
+        <tr class="rsub"><td><strong>Total Activo Corriente</strong></td><td class="r"><strong>$405.000</strong></td></tr>
         <tr class="rg"><td colspan="2">Inventarios <span style="letter-spacing:0;text-transform:none;color:var(--i3)">Nota 5</span></td></tr>
-        <tr><td class="i1">Puntos disponibles — 35 uds. × $27.273</td><td class="r au">$954.545</td></tr>
-        <tr class="rsub"><td><strong>Total Inventarios</strong></td><td class="r"><strong>$954.545</strong></td></tr>
-        <tr class="rfin"><td><strong>TOTAL ACTIVOS</strong></td><td class="r" style="color:#e8d29b"><strong>$1.309.545</strong></td></tr>
+        <tr><td class="i1">Puntos disponibles — 34 uds. × $27.273</td><td class="r au">$927.273</td></tr>
+        <tr class="rsub"><td><strong>Total Inventarios</strong></td><td class="r"><strong>$927.273</strong></td></tr>
+        <tr class="rfin"><td><strong>TOTAL ACTIVOS</strong></td><td class="r" style="color:#e8d29b"><strong>$1.332.273</strong></td></tr>
       </tbody></table>
     </div>
     <div class="box box0">
@@ -189,11 +189,11 @@ tr:last-child td{border-bottom:none}
         <tr class="rsub"><td><strong>Total Pasivos</strong></td><td class="r"><strong>$0</strong></td></tr>
         <tr class="rg"><td colspan="2">Patrimonio</td></tr>
         <tr><td class="i1">Inversión — 2 cocinas</td><td class="r">$1.200.000</td></tr>
-        <tr><td class="i1">Utilidad Acumulada</td><td class="r pos"><strong>$109.545</strong></td></tr>
-        <tr class="rsub"><td><strong>Total Patrimonio</strong></td><td class="r pos"><strong>$1.309.545</strong></td></tr>
-        <tr class="rfin"><td><strong>TOTAL PAS. + PATRIMONIO</strong></td><td class="r" style="color:#e8d29b"><strong>$1.309.545</strong></td></tr>
+        <tr><td class="i1">Utilidad Acumulada</td><td class="r pos"><strong>$132.273</strong></td></tr>
+        <tr class="rsub"><td><strong>Total Patrimonio</strong></td><td class="r pos"><strong>$1.332.273</strong></td></tr>
+        <tr class="rfin"><td><strong>TOTAL PAS. + PATRIMONIO</strong></td><td class="r" style="color:#e8d29b"><strong>$1.332.273</strong></td></tr>
       </tbody></table>
-      <div class="chk"><span>$1.309.545 = $0 + $1.309.545</span><span>✓ CUADRA</span></div>
+      <div class="chk"><span>$1.332.273 = $0 + $1.332.273</span><span>✓ CUADRA</span></div>
     </div>
   </div>
 </div>
@@ -204,20 +204,20 @@ tr:last-child td{border-bottom:none}
     <div class="bh">Estado de Resultados <em>Corte 22 Oct 2026</em></div>
     <table><tbody>
       <tr class="rg"><td colspan="3">Ingresos por Venta de Puntos</td></tr>
-      <tr><td class="i1">Felipe Vargas — 6 puntos (3×$35.000 + 2×$40.000 + 1×$50.000)</td><td><span class="chip cw">3 por cobrar</span></td><td class="r pos">$235.000</td></tr>
+      <tr><td class="i1">Felipe Vargas — 7 puntos (3×$35.000 + 2×$40.000 + 2×$50.000)</td><td><span class="chip cw">4 por cobrar</span></td><td class="r pos">$285.000</td></tr>
       <tr><td class="i1">Camilo Cuellar — 3 puntos (2×$35.000 + 1×$50.000)</td><td><span class="chip cw">1 por cobrar</span></td><td class="r pos">$120.000</td></tr>
-      <tr class="rsub"><td colspan="2"><strong>Total Ventas</strong></td><td class="r pos"><strong>$355.000</strong></td></tr>
+      <tr class="rsub"><td colspan="2"><strong>Total Ventas</strong></td><td class="r pos"><strong>$405.000</strong></td></tr>
       <tr class="rg"><td colspan="3">Costo de Ventas</td></tr>
-      <tr><td class="i1">9 puntos × $27.273 (costo promedio)</td><td></td><td class="r neg">($245.455)</td></tr>
-      <tr class="rsub"><td colspan="2"><strong>Total Costo de Ventas</strong></td><td class="r neg"><strong>($245.455)</strong></td></tr>
-      <tr class="rtot"><td colspan="2"><strong>UTILIDAD BRUTA</strong> <span style="font-size:10px;font-weight:400;color:var(--i3)">Margen 30,9%</span></td><td class="r pos"><strong>$109.545</strong></td></tr>
+      <tr><td class="i1">10 puntos × $27.273 (costo promedio)</td><td></td><td class="r neg">($272.727)</td></tr>
+      <tr class="rsub"><td colspan="2"><strong>Total Costo de Ventas</strong></td><td class="r neg"><strong>($272.727)</strong></td></tr>
+      <tr class="rtot"><td colspan="2"><strong>UTILIDAD BRUTA</strong> <span style="font-size:10px;font-weight:400;color:var(--i3)">Margen 32,7%</span></td><td class="r pos"><strong>$132.273</strong></td></tr>
       <tr class="rg"><td colspan="3">Gastos Operacionales</td></tr>
       <tr><td class="i1">Comisiones a vendedores</td><td><span class="chip cw">Por definir</span></td><td class="r mu">$0</td></tr>
       <tr><td class="i1">Domicilios y envíos</td><td><span class="chip cw">Por definir</span></td><td class="r mu">$0</td></tr>
       <tr class="rsub"><td colspan="2"><strong>Total Gastos Operacionales</strong></td><td class="r"><strong>$0</strong></td></tr>
-      <tr class="rfin"><td colspan="2"><strong>UTILIDAD NETA ACUMULADA</strong></td><td class="r" style="color:#e8d29b"><strong>$109.545</strong></td></tr>
+      <tr class="rfin"><td colspan="2"><strong>UTILIDAD NETA ACUMULADA</strong></td><td class="r" style="color:#e8d29b"><strong>$132.273</strong></td></tr>
     </tbody></table>
-    <div class="note na">📈 ROI actual: 9,1% sobre la inversión de $1.200.000, con solo el 20,5% de los puntos vendidos. La utilidad bajará cuando se registren las comisiones y los gastos de envío. Ver proyección de cierre en la pestaña Resumen.</div>
+    <div class="note na">📈 ROI actual: 11,0% sobre la inversión de $1.200.000, con solo el 22,7% de los puntos vendidos. La utilidad bajará cuando se registren las comisiones y los gastos de envío. Ver proyección de cierre en la pestaña Resumen.</div>
   </div>
 </div>
 
@@ -233,7 +233,6 @@ tr:last-child td{border-bottom:none}
       <tr class="rtot"><td><strong>TOTAL</strong></td><td class="r"><strong>$1.200.000</strong></td><td class="r"><strong>44</strong></td><td class="r"><strong>$27.273</strong></td></tr>
       </tbody>
     </table>
-    <div class="note nw">⚠ Se asumió que la inversión total fue de $1.200.000, repartida en partes iguales entre las dos cocinas. Si el valor real por cocina es distinto, hay que ajustarlo.</div>
   </div>
   <div class="box">
     <div class="bh">Kardex de Puntos</div>
@@ -241,24 +240,24 @@ tr:last-child td{border-bottom:none}
       <thead><tr><th style="text-align:left">Concepto</th><th>Puntos</th><th>Costo unitario</th><th>Valor al costo</th></tr></thead>
       <tbody>
       <tr><td>Puntos producidos</td><td class="r">44</td><td class="r">$27.273</td><td class="r">$1.200.000</td></tr>
-      <tr><td>Puntos vendidos — Felipe Vargas</td><td class="r neg">(6)</td><td class="r">$27.273</td><td class="r neg">($163.636)</td></tr>
-      <tr><td>Puntos vendidos — Camilo Cuellar</td><td class="r neg">(3)</td><td class="r">$27.273</td><td class="r neg">($81.819)</td></tr>
-      <tr class="rtot"><td><strong>PUNTOS DISPONIBLES</strong></td><td class="r"><strong>35</strong></td><td class="r"><strong>$27.273</strong></td><td class="r au"><strong>$954.545</strong></td></tr>
+      <tr><td>Puntos vendidos — Felipe Vargas</td><td class="r neg">(7)</td><td class="r">$27.273</td><td class="r neg">($190.909)</td></tr>
+      <tr><td>Puntos vendidos — Camilo Cuellar</td><td class="r neg">(3)</td><td class="r">$27.273</td><td class="r neg">($81.818)</td></tr>
+      <tr class="rtot"><td><strong>PUNTOS DISPONIBLES</strong></td><td class="r"><strong>34</strong></td><td class="r"><strong>$27.273</strong></td><td class="r au"><strong>$927.273</strong></td></tr>
       </tbody>
     </table>
-    <div class="note na">📦 35 puntos disponibles para vender, con un valor potencial entre $1.225.000 (a $35.000) y $2.100.000 (a $60.000).</div>
+    <div class="note na">📦 34 puntos disponibles para vender, con un valor potencial entre $1.190.000 (a $35.000) y $2.040.000 (a $60.000).</div>
   </div>
 </div>
 
 <!-- NOTAS -->
 <div class="pane" id="tab-no">
-  <div class="nota"><div class="nh"><span><span class="nn">NOTA 1</span>Información General</span></div><div class="nb2">Penthouse es una comercializadora de puntos, producto que se genera a partir de cocinas. Se invirtió en 2 cocinas por un valor total de $1.200.000 COP, que generaron 22 puntos cada una, para un total de 44 puntos. La venta se realiza a través de vendedores (Felipe Vargas y Camilo Cuellar). Fecha de corte: 22 de octubre de 2026.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 1</span>Información General</span></div><div class="nb2">Penthouse es una comercializadora de puntos, producto que se genera a partir de cocinas. Se invirtió en 2 cocinas de $600.000 cada una (total $1.200.000 COP), que generaron 22 puntos cada una, para un total de 44 puntos. La venta se realiza a través de vendedores (Felipe Vargas y Camilo Cuellar). Fecha de corte: 22 de octubre de 2026.</div></div>
   <div class="nota"><div class="nh"><span><span class="nn">NOTA 2</span>Políticas Contables</span></div><div class="nb2"><strong>Base:</strong> NIIF para Pymes. <strong>Moneda:</strong> COP. <strong>Inventarios:</strong> costo promedio por punto = $1.200.000 ÷ 44 = $27.273. <strong>Ingresos:</strong> reconocidos al momento de la venta del punto, aunque el cobro sea posterior. <strong>Precio de venta:</strong> varía por punto entre $35.000 y $60.000; se registra el precio pactado de cada venta.</div></div>
   <div class="nota"><div class="nh"><span><span class="nn">NOTA 3</span>Caja y Equivalentes</span><span class="bl">$175.000</span></div><div class="nb2">La caja corresponde a los cobros recibidos: $105.000 de Felipe Vargas (3 puntos a $35.000) y $70.000 de Camilo Cuellar (2 puntos a $35.000). La inversión en las cocinas se presenta como capital aportado, por lo que no genera salida de caja en este estado. Saldo calculado, pendiente de verificar.</div></div>
-  <div class="nota"><div class="nh"><span><span class="nn">NOTA 4</span>Cuentas por Cobrar</span><span class="warn">$180.000</span></div><div class="nb2"><strong>Felipe Vargas ($130.000):</strong> 2 puntos × $40.000 + 1 punto × $50.000, con pago acordado para el 31 de octubre de 2026. <strong>Camilo Cuellar ($50.000):</strong> 1 punto × $50.000, con pago acordado para el 31 de octubre de 2026.</div></div>
-  <div class="nota"><div class="nh"><span><span class="nn">NOTA 5</span>Inventarios</span><span class="bl">$954.545</span></div><div class="nb2">Quedan 35 puntos disponibles valorados al costo promedio de $27.273. Los precios de mercado de los puntos varían entre $35.000 y $60.000; el precio promedio de las ventas realizadas es de $39.444.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 4</span>Cuentas por Cobrar</span><span class="warn">$230.000</span></div><div class="nb2"><strong>Felipe Vargas ($180.000):</strong> 2 puntos × $40.000 + 2 puntos × $50.000, con pago acordado para el 31 de octubre de 2026. <strong>Camilo Cuellar ($50.000):</strong> 1 punto × $50.000, con pago acordado para el 31 de octubre de 2026.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 5</span>Inventarios</span><span class="bl">$927.273</span></div><div class="nb2">Quedan 34 puntos disponibles valorados al costo promedio de $27.273. Los precios de mercado de los puntos varían entre $35.000 y $60.000; el precio promedio de las ventas realizadas es de $40.500.</div></div>
   <div class="nota"><div class="nh"><span><span class="nn">NOTA 6</span>Comisiones y Gastos — Pendientes de Registro</span></div><div class="nb2"><strong>Comisiones a vendedores:</strong> se pagará comisión a cada vendedor; aún no se ha definido el porcentaje o valor, por lo que no están reconocidas. <strong>Domicilios y envíos:</strong> se incurrirán gastos de domicilios y envíos; pendientes de registrar. Al definirse, se reconocerán como gastos operacionales y reducirán la utilidad neta. <strong>Socios:</strong> no se ha definido distribución de la inversión ni de la utilidad entre socios.</div></div>
-  <div class="nota"><div class="nh"><span><span class="nn">NOTA 7</span>Eventos Posteriores</span></div><div class="nb2">El 31 de octubre de 2026 vencen $180.000 en total (Felipe $130.000 y Camilo $50.000). Con su recaudo, la caja pasaría de $175.000 a $355.000.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 7</span>Eventos Posteriores</span></div><div class="nb2">El 31 de octubre de 2026 vencen $230.000 en total (Felipe $180.000 y Camilo $50.000). Con su recaudo, la caja pasaría de $175.000 a $405.000.</div></div>
 </div>
 
 <script>
