@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Penthouse · Estados Financieros</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f5f2ea;--card:#fffdf8;--c2:#f1ede2;--c3:#e8e2d3;
+  --bd:#d9d0bb;--bd2:#e7e0cf;
+  --ink:#14213d;--i2:#4a5163;--i3:#8b8f9c;
+  --Au:#b08d4a;--Aubg:#faf5e8;--Aubd:#e3cf9d;
+  --G:#1f6b4a;--Gbg:#eef7f1;--Gbd:#9fd3b5;
+  --R:#8c2f39;--Rbg:#fbeff0;--Rbd:#e6aab0;
+  --W:#9a6b1a;--Wbg:#fdf6e3;--Wbd:#ecd48a;
+  --B:#1d3b6b;--Bbg:#edf2fa;--Bbd:#a9bfe3;
+}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;min-height:100vh}
+.hdr{background:linear-gradient(135deg,#0d1730,#14213d);color:#fff;padding:0 28px;border-bottom:3px solid var(--Au)}
+.hdr-t{display:flex;justify-content:space-between;align-items:center;padding:18px 0 14px}
+.hdr-t h1{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;letter-spacing:1px;color:#e8d29b}
+.hdr-t p{font-size:11px;color:#9aa3b8;margin-top:3px;letter-spacing:1px;text-transform:uppercase}
+.hdr-m{text-align:right;font-size:11px;color:#9aa3b8;font-family:'IBM Plex Mono',monospace;line-height:1.6}
+.hdr-m b{color:#fff}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);background:var(--card);border-bottom:2px solid var(--bd)}
+.kpi{padding:12px 16px;border-right:1px solid var(--bd)}
+.kpi:last-child{border:none}
+.kl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--i3);margin-bottom:4px}
+.kv{font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700}
+.kv.g{color:var(--G)}.kv.r{color:var(--R)}.kv.w{color:var(--W)}.kv.b{color:var(--B)}.kv.a{color:var(--Au)}
+.kd{font-size:10px;color:var(--i3);margin-top:2px}
+.tabs{display:flex;background:var(--card);border-bottom:2px solid var(--bd);overflow-x:auto}
+.tab{padding:11px 18px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;color:var(--i3);border-bottom:3px solid transparent;white-space:nowrap;transition:.15s}
+.tab:hover{color:var(--i2)}.tab.on{color:var(--ink);border-color:var(--Au)}
+.pane{display:none;padding:20px 24px;max-width:1000px}
+.pane.on{display:block}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.box{background:var(--card);border:1px solid var(--bd);border-radius:6px;overflow:hidden;margin-bottom:16px}
+.box0{margin-bottom:0}
+.bh{background:var(--ink);color:#e8d29b;padding:9px 18px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.bh em{font-style:normal;font-size:10px;color:#9aa3b8;font-weight:400;letter-spacing:0;text-transform:none}
+table{width:100%;border-collapse:collapse}
+th{background:var(--c2);padding:7px 16px;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--i3);border-bottom:1px solid var(--bd);font-weight:600;text-align:right}
+th:first-child{text-align:left}
+td{padding:8px 16px;border-bottom:1px solid var(--bd2);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+.r{text-align:right;font-family:'IBM Plex Mono',monospace;font-size:11px;white-space:nowrap}
+.i1{padding-left:32px;color:var(--i2)}
+.rg td{background:var(--c3)!important;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--i3);padding:6px 16px;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.rsub td{font-weight:600;background:#f3eee2!important;border-top:1px solid var(--bd2)}
+.rtot td{font-weight:700;background:#e9e2d0!important;border-top:2px solid var(--bd);font-size:13px}
+.rfin td{font-weight:700;background:var(--ink)!important;color:#fff!important;font-size:13px}
+.pos{color:var(--G)}.neg{color:var(--R)}.warn{color:var(--W)}.bl{color:var(--B)}.au{color:var(--Au)}.mu{color:var(--i3)}
+.chip{display:inline-block;padding:2px 7px;border-radius:8px;font-size:9px;font-weight:700;border:1px solid}
+.cg{background:var(--Gbg);color:var(--G);border-color:var(--Gbd)}
+.cw{background:var(--Wbg);color:var(--W);border-color:var(--Wbd)}
+.cb{background:var(--Bbg);color:var(--B);border-color:var(--Bbd)}
+.ca{background:var(--Aubg);color:var(--Au);border-color:var(--Aubd)}
+.cr2{background:var(--Rbg);color:var(--R);border-color:var(--Rbd)}
+.chk{display:flex;justify-content:space-between;padding:9px 18px;background:var(--Gbg);border-top:1px dashed var(--Gbd);font-size:11px;color:var(--G);font-weight:600}
+.note{padding:9px 16px;font-size:11px;line-height:1.7;border-top:1px solid}
+.nw{background:var(--Wbg);border-color:var(--Wbd);color:var(--W)}
+.na{background:var(--Aubg);border-color:var(--Aubd);color:#7a5e2a}
+.nota{border:1px solid var(--bd);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.nh{background:var(--c2);padding:9px 16px;font-size:11px;font-weight:700;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between}
+.nn{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--Au);margin-right:6px}
+.nb2{padding:10px 16px;font-size:12px;line-height:1.85;color:var(--i2);background:var(--card)}
+.db-g{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.db-c{background:var(--card);border:1px solid var(--bd);border-top:3px solid var(--Au);border-radius:6px;padding:13px 16px}
+.db-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--i3);margin-bottom:5px}
+.db-v{font-family:'IBM Plex Mono',monospace;font-size:17px;font-weight:700}
+.db-s{font-size:10px;color:var(--i3);margin-top:3px}
+.prog{background:var(--card);border:1px solid var(--bd);border-radius:6px;padding:14px 18px;margin-bottom:14px}
+.prog-h{display:flex;justify-content:space-between;font-size:11px;color:var(--i2);margin-bottom:8px;font-weight:600}
+.bar{height:12px;background:var(--c3);border-radius:8px;overflow:hidden}
+.bar i{display:block;height:100%;width:20.5%;background:linear-gradient(90deg,#b08d4a,#e0c37e)}
+.prog-f{display:flex;justify-content:space-between;font-size:10px;color:var(--i3);margin-top:6px}
+@media(max-width:700px){.kpis{grid-template-columns:repeat(2,1fr)}.g2,.db-g{grid-template-columns:1fr}.pane{padding:12px}.hdr-t{flex-direction:column;align-items:flex-start;gap:8px}.hdr-m{text-align:left}}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-t">
+    <div><h1>PENTHOUSE</h1><p>Comercializadora de Puntos · Estados Financieros</p></div>
+    <div class="hdr-m"><b>Corte: 22 Oct 2026</b><br>2 Cocinas · 44 Puntos · COP<br>Próximo cobro: 31 Oct 2026</div>
+  </div>
+</div>
+<div class="kpis">
+  <div class="kpi"><div class="kl">Ventas Totales</div><div class="kv g">$355.000</div><div class="kd">9 puntos vendidos</div></div>
+  <div class="kpi"><div class="kl">Utilidad Neta</div><div class="kv a">$109.545</div><div class="kd">Margen 30,9% · ROI 9,1%</div></div>
+  <div class="kpi"><div class="kl">Inversión</div><div class="kv b">$1.200.000</div><div class="kd">2 cocinas · 44 puntos</div></div>
+  <div class="kpi"><div class="kl">Cobrado</div><div class="kv g">$175.000</div><div class="kd">5 puntos pagados</div></div>
+  <div class="kpi"><div class="kl">Por Cobrar</div><div class="kv w">$180.000</div><div class="kd">4 puntos · vence 31 Oct</div></div>
+</div>
+<div class="tabs">
+  <div class="tab on" onclick="S('db')">Resumen</div>
+  <div class="tab" onclick="S('ve')">Vendedores</div>
+  <div class="tab" onclick="S('bg')">Balance General</div>
+  <div class="tab" onclick="S('er')">Resultados</div>
+  <div class="tab" onclick="S('inv')">Inventario</div>
+  <div class="tab" onclick="S('no')">Notas</div>
+</div>
+
+<!-- RESUMEN -->
+<div class="pane on" id="tab-db">
+  <div class="prog">
+    <div class="prog-h"><span>Avance de ventas</span><span>9 de 44 puntos · 20,5%</span></div>
+    <div class="bar"><i></i></div>
+    <div class="prog-f"><span>9 vendidos</span><span>35 disponibles</span></div>
+  </div>
+  <div class="db-g">
+    <div class="db-c"><div class="db-l">Puntos Totales</div><div class="db-v au">44</div><div class="db-s">2 cocinas × 22 puntos</div></div>
+    <div class="db-c"><div class="db-l">Puntos Vendidos</div><div class="db-v pos">9</div><div class="db-s">Felipe 6 · Camilo 3</div></div>
+    <div class="db-c"><div class="db-l">Puntos Disponibles</div><div class="db-v bl">35</div><div class="db-s">Inventario por vender</div></div>
+    <div class="db-c"><div class="db-l">Costo por Punto</div><div class="db-v">$27.273</div><div class="db-s">$1.200.000 ÷ 44 puntos</div></div>
+    <div class="db-c"><div class="db-l">Precio Promedio</div><div class="db-v pos">$39.444</div><div class="db-s">Rango de mercado: $35.000 – $60.000</div></div>
+    <div class="db-c"><div class="db-l">Margen por Punto</div><div class="db-v au">$12.172</div><div class="db-s">30,9% sobre el precio de venta</div></div>
+    <div class="db-c"><div class="db-l">Utilidad Bruta</div><div class="db-v pos">$109.545</div><div class="db-s">Ventas − costo de puntos vendidos</div></div>
+    <div class="db-c"><div class="db-l">Caja Actual</div><div class="db-v bl">$175.000</div><div class="db-s">Cobros recibidos</div></div>
+    <div class="db-c"><div class="db-l">Cuentas por Cobrar</div><div class="db-v warn">$180.000</div><div class="db-s">Felipe $130.000 · Camilo $50.000</div></div>
+  </div>
+  <div class="box">
+    <div class="bh">Proyección de Cierre <em>Si se venden los 35 puntos restantes</em></div>
+    <table>
+      <thead><tr><th style="text-align:left">Escenario de precio</th><th>Precio/punto</th><th>Ingreso restante</th><th>Ingreso total</th><th>Utilidad total</th><th>ROI</th></tr></thead>
+      <tbody>
+      <tr><td>Conservador (mínimo)</td><td class="r">$35.000</td><td class="r">$1.225.000</td><td class="r">$1.580.000</td><td class="r pos">$380.000</td><td class="r au">31,7%</td></tr>
+      <tr><td>Intermedio</td><td class="r">$47.500</td><td class="r">$1.662.500</td><td class="r">$2.017.500</td><td class="r pos">$817.500</td><td class="r au">68,1%</td></tr>
+      <tr><td>Optimista (máximo)</td><td class="r">$60.000</td><td class="r">$2.100.000</td><td class="r">$2.455.000</td><td class="r pos">$1.255.000</td><td class="r au">104,6%</td></tr>
+      </tbody>
+    </table>
+    <div class="note na">Las ventas ya realizadas (9 puntos, $355.000) se mantienen. La proyección solo varía el precio de los 35 puntos que aún no se venden. Punto de equilibrio: vendiendo los 35 restantes a ~$24.143 c/u se recupera toda la inversión. Antes de comisiones y gastos de envío.</div>
+  </div>
+</div>
+
+<!-- VENDEDORES -->
+<div class="pane" id="tab-ve">
+  <div class="box">
+    <div class="bh">Ventas por Vendedor <em>Corte 22 Oct 2026</em></div>
+    <table>
+      <thead><tr><th style="text-align:left">Vendedor</th><th>Vendidos</th><th>Pagados</th><th>Pendientes</th><th>Precio prom.</th><th>Total vendido</th><th>Cobrado</th><th>Por cobrar</th></tr></thead>
+      <tbody>
+      <tr><td>Felipe Vargas</td><td class="r">6</td><td class="r pos">3</td><td class="r warn">3</td><td class="r">$39.167</td><td class="r">$235.000</td><td class="r pos">$105.000</td><td class="r warn">$130.000</td></tr>
+      <tr><td>Camilo Cuellar</td><td class="r">3</td><td class="r pos">2</td><td class="r warn">1</td><td class="r">$40.000</td><td class="r">$120.000</td><td class="r pos">$70.000</td><td class="r warn">$50.000</td></tr>
+      <tr class="rtot"><td><strong>TOTAL</strong></td><td class="r"><strong>9</strong></td><td class="r pos"><strong>5</strong></td><td class="r warn"><strong>4</strong></td><td class="r"><strong>$39.444</strong></td><td class="r"><strong>$355.000</strong></td><td class="r pos"><strong>$175.000</strong></td><td class="r warn"><strong>$180.000</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="box">
+    <div class="bh">Detalle de Movimientos</div>
+    <table>
+      <thead><tr><th style="text-align:left">Vendedor</th><th style="text-align:left">Concepto</th><th>Puntos</th><th>Precio/pto</th><th>Valor</th><th>Estado</th></tr></thead>
+      <tbody>
+      <tr><td>Felipe Vargas</td><td>Pago recibido</td><td class="r">3</td><td class="r">$35.000</td><td class="r pos">$105.000</td><td class="r"><span class="chip cg">COBRADO ✓</span></td></tr>
+      <tr><td>Felipe Vargas</td><td>Pendiente de pago</td><td class="r">2</td><td class="r">$40.000</td><td class="r warn">$80.000</td><td class="r"><span class="chip cw">Vence 31/10</span></td></tr>
+      <tr><td>Felipe Vargas</td><td>Pendiente de pago</td><td class="r">1</td><td class="r">$50.000</td><td class="r warn">$50.000</td><td class="r"><span class="chip cw">Vence 31/10</span></td></tr>
+      <tr><td>Camilo Cuellar</td><td>Pago recibido</td><td class="r">2</td><td class="r">$35.000</td><td class="r pos">$70.000</td><td class="r"><span class="chip cg">COBRADO ✓</span></td></tr>
+      <tr><td>Camilo Cuellar</td><td>Pendiente de pago</td><td class="r">1</td><td class="r">$50.000</td><td class="r warn">$50.000</td><td class="r"><span class="chip cw">Vence 31/10</span></td></tr>
+      </tbody>
+    </table>
+    <div class="note nw">⚠ El 31 de octubre vencen $180.000 en total (4 puntos): Felipe $130.000 y Camilo $50.000. Las comisiones a vendedores aún no están registradas (ver Nota 6).</div>
+  </div>
+</div>
+
+<!-- BALANCE GENERAL -->
+<div class="pane" id="tab-bg">
+  <div class="g2">
+    <div class="box box0">
+      <div class="bh">ACTIVOS <em>Al 22 Oct 2026</em></div>
+      <table><tbody>
+        <tr class="rg"><td colspan="2">Activo Corriente</td></tr>
+        <tr><td class="i1">Caja y Equivalentes <span class="chip ca">Nota 3</span></td><td class="r bl">$175.000</td></tr>
+        <tr><td class="i1">CXC — Felipe Vargas <span class="chip cw">31/10</span></td><td class="r warn">$130.000</td></tr>
+        <tr><td class="i1">CXC — Camilo Cuellar <span class="chip cw">31/10</span></td><td class="r warn">$50.000</td></tr>
+        <tr class="rsub"><td><strong>Total Activo Corriente</strong></td><td class="r"><strong>$355.000</strong></td></tr>
+        <tr class="rg"><td colspan="2">Inventarios <span style="letter-spacing:0;text-transform:none;color:var(--i3)">Nota 5</span></td></tr>
+        <tr><td class="i1">Puntos disponibles — 35 uds. × $27.273</td><td class="r au">$954.545</td></tr>
+        <tr class="rsub"><td><strong>Total Inventarios</strong></td><td class="r"><strong>$954.545</strong></td></tr>
+        <tr class="rfin"><td><strong>TOTAL ACTIVOS</strong></td><td class="r" style="color:#e8d29b"><strong>$1.309.545</strong></td></tr>
+      </tbody></table>
+    </div>
+    <div class="box box0">
+      <div class="bh">PASIVOS Y PATRIMONIO</div>
+      <table><tbody>
+        <tr class="rg"><td colspan="2">Pasivos</td></tr>
+        <tr><td class="i1">Sin obligaciones financieras ni cuentas por pagar <span class="chip cw">Comisiones pendientes</span></td><td class="r mu">$0</td></tr>
+        <tr class="rsub"><td><strong>Total Pasivos</strong></td><td class="r"><strong>$0</strong></td></tr>
+        <tr class="rg"><td colspan="2">Patrimonio</td></tr>
+        <tr><td class="i1">Inversión — 2 cocinas</td><td class="r">$1.200.000</td></tr>
+        <tr><td class="i1">Utilidad Acumulada</td><td class="r pos"><strong>$109.545</strong></td></tr>
+        <tr class="rsub"><td><strong>Total Patrimonio</strong></td><td class="r pos"><strong>$1.309.545</strong></td></tr>
+        <tr class="rfin"><td><strong>TOTAL PAS. + PATRIMONIO</strong></td><td class="r" style="color:#e8d29b"><strong>$1.309.545</strong></td></tr>
+      </tbody></table>
+      <div class="chk"><span>$1.309.545 = $0 + $1.309.545</span><span>✓ CUADRA</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTADOS -->
+<div class="pane" id="tab-er">
+  <div class="box">
+    <div class="bh">Estado de Resultados <em>Corte 22 Oct 2026</em></div>
+    <table><tbody>
+      <tr class="rg"><td colspan="3">Ingresos por Venta de Puntos</td></tr>
+      <tr><td class="i1">Felipe Vargas — 6 puntos (3×$35.000 + 2×$40.000 + 1×$50.000)</td><td><span class="chip cw">3 por cobrar</span></td><td class="r pos">$235.000</td></tr>
+      <tr><td class="i1">Camilo Cuellar — 3 puntos (2×$35.000 + 1×$50.000)</td><td><span class="chip cw">1 por cobrar</span></td><td class="r pos">$120.000</td></tr>
+      <tr class="rsub"><td colspan="2"><strong>Total Ventas</strong></td><td class="r pos"><strong>$355.000</strong></td></tr>
+      <tr class="rg"><td colspan="3">Costo de Ventas</td></tr>
+      <tr><td class="i1">9 puntos × $27.273 (costo promedio)</td><td></td><td class="r neg">($245.455)</td></tr>
+      <tr class="rsub"><td colspan="2"><strong>Total Costo de Ventas</strong></td><td class="r neg"><strong>($245.455)</strong></td></tr>
+      <tr class="rtot"><td colspan="2"><strong>UTILIDAD BRUTA</strong> <span style="font-size:10px;font-weight:400;color:var(--i3)">Margen 30,9%</span></td><td class="r pos"><strong>$109.545</strong></td></tr>
+      <tr class="rg"><td colspan="3">Gastos Operacionales</td></tr>
+      <tr><td class="i1">Comisiones a vendedores</td><td><span class="chip cw">Por definir</span></td><td class="r mu">$0</td></tr>
+      <tr><td class="i1">Domicilios y envíos</td><td><span class="chip cw">Por definir</span></td><td class="r mu">$0</td></tr>
+      <tr class="rsub"><td colspan="2"><strong>Total Gastos Operacionales</strong></td><td class="r"><strong>$0</strong></td></tr>
+      <tr class="rfin"><td colspan="2"><strong>UTILIDAD NETA ACUMULADA</strong></td><td class="r" style="color:#e8d29b"><strong>$109.545</strong></td></tr>
+    </tbody></table>
+    <div class="note na">📈 ROI actual: 9,1% sobre la inversión de $1.200.000, con solo el 20,5% de los puntos vendidos. La utilidad bajará cuando se registren las comisiones y los gastos de envío. Ver proyección de cierre en la pestaña Resumen.</div>
+  </div>
+</div>
+
+<!-- INVENTARIO -->
+<div class="pane" id="tab-inv">
+  <div class="box">
+    <div class="bh">Inversión en Cocinas</div>
+    <table>
+      <thead><tr><th style="text-align:left">Cocina</th><th>Costo</th><th>Puntos generados</th><th>Costo por punto</th></tr></thead>
+      <tbody>
+      <tr><td>Cocina 1</td><td class="r">$600.000</td><td class="r">22</td><td class="r">$27.273</td></tr>
+      <tr><td>Cocina 2</td><td class="r">$600.000</td><td class="r">22</td><td class="r">$27.273</td></tr>
+      <tr class="rtot"><td><strong>TOTAL</strong></td><td class="r"><strong>$1.200.000</strong></td><td class="r"><strong>44</strong></td><td class="r"><strong>$27.273</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="note nw">⚠ Se asumió que la inversión total fue de $1.200.000, repartida en partes iguales entre las dos cocinas. Si el valor real por cocina es distinto, hay que ajustarlo.</div>
+  </div>
+  <div class="box">
+    <div class="bh">Kardex de Puntos</div>
+    <table>
+      <thead><tr><th style="text-align:left">Concepto</th><th>Puntos</th><th>Costo unitario</th><th>Valor al costo</th></tr></thead>
+      <tbody>
+      <tr><td>Puntos producidos</td><td class="r">44</td><td class="r">$27.273</td><td class="r">$1.200.000</td></tr>
+      <tr><td>Puntos vendidos — Felipe Vargas</td><td class="r neg">(6)</td><td class="r">$27.273</td><td class="r neg">($163.636)</td></tr>
+      <tr><td>Puntos vendidos — Camilo Cuellar</td><td class="r neg">(3)</td><td class="r">$27.273</td><td class="r neg">($81.819)</td></tr>
+      <tr class="rtot"><td><strong>PUNTOS DISPONIBLES</strong></td><td class="r"><strong>35</strong></td><td class="r"><strong>$27.273</strong></td><td class="r au"><strong>$954.545</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="note na">📦 35 puntos disponibles para vender, con un valor potencial entre $1.225.000 (a $35.000) y $2.100.000 (a $60.000).</div>
+  </div>
+</div>
+
+<!-- NOTAS -->
+<div class="pane" id="tab-no">
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 1</span>Información General</span></div><div class="nb2">Penthouse es una comercializadora de puntos, producto que se genera a partir de cocinas. Se invirtió en 2 cocinas por un valor total de $1.200.000 COP, que generaron 22 puntos cada una, para un total de 44 puntos. La venta se realiza a través de vendedores (Felipe Vargas y Camilo Cuellar). Fecha de corte: 22 de octubre de 2026.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 2</span>Políticas Contables</span></div><div class="nb2"><strong>Base:</strong> NIIF para Pymes. <strong>Moneda:</strong> COP. <strong>Inventarios:</strong> costo promedio por punto = $1.200.000 ÷ 44 = $27.273. <strong>Ingresos:</strong> reconocidos al momento de la venta del punto, aunque el cobro sea posterior. <strong>Precio de venta:</strong> varía por punto entre $35.000 y $60.000; se registra el precio pactado de cada venta.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 3</span>Caja y Equivalentes</span><span class="bl">$175.000</span></div><div class="nb2">La caja corresponde a los cobros recibidos: $105.000 de Felipe Vargas (3 puntos a $35.000) y $70.000 de Camilo Cuellar (2 puntos a $35.000). La inversión en las cocinas se presenta como capital aportado, por lo que no genera salida de caja en este estado. Saldo calculado, pendiente de verificar.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 4</span>Cuentas por Cobrar</span><span class="warn">$180.000</span></div><div class="nb2"><strong>Felipe Vargas ($130.000):</strong> 2 puntos × $40.000 + 1 punto × $50.000, con pago acordado para el 31 de octubre de 2026. <strong>Camilo Cuellar ($50.000):</strong> 1 punto × $50.000, con pago acordado para el 31 de octubre de 2026.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 5</span>Inventarios</span><span class="bl">$954.545</span></div><div class="nb2">Quedan 35 puntos disponibles valorados al costo promedio de $27.273. Los precios de mercado de los puntos varían entre $35.000 y $60.000; el precio promedio de las ventas realizadas es de $39.444.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 6</span>Comisiones y Gastos — Pendientes de Registro</span></div><div class="nb2"><strong>Comisiones a vendedores:</strong> se pagará comisión a cada vendedor; aún no se ha definido el porcentaje o valor, por lo que no están reconocidas. <strong>Domicilios y envíos:</strong> se incurrirán gastos de domicilios y envíos; pendientes de registrar. Al definirse, se reconocerán como gastos operacionales y reducirán la utilidad neta. <strong>Socios:</strong> no se ha definido distribución de la inversión ni de la utilidad entre socios.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 7</span>Eventos Posteriores</span></div><div class="nb2">El 31 de octubre de 2026 vencen $180.000 en total (Felipe $130.000 y Camilo $50.000). Con su recaudo, la caja pasaría de $175.000 a $355.000.</div></div>
+</div>
+
+<script>
+const M={db:0,ve:1,bg:2,er:3,inv:4,no:5};
+function S(id){
+  document.querySelectorAll('.pane').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById('tab-'+id).classList.add('on');
+  document.querySelectorAll('.tab')[M[id]].classList.add('on');
+}
+</script>
+</body>
+</html>
