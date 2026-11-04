@@ -16,6 +16,7 @@
   --R:#8c2f39;--Rbg:#fbeff0;--Rbd:#e6aab0;
   --W:#9a6b1a;--Wbg:#fdf6e3;--Wbd:#ecd48a;
   --B:#1d3b6b;--Bbg:#edf2fa;--Bbd:#a9bfe3;
+  --O:#9a4a1a;--Obg:#fff4e6;--Obd:#f0c18a;
 }
 body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;min-height:100vh}
 .hdr{background:linear-gradient(135deg,#0d1730,#14213d);color:#fff;padding:0 28px;border-bottom:3px solid var(--Au)}
@@ -59,6 +60,7 @@ tr:last-child td{border-bottom:none}
 .cb{background:var(--Bbg);color:var(--B);border-color:var(--Bbd)}
 .ca{background:var(--Aubg);color:var(--Au);border-color:var(--Aubd)}
 .cr2{background:var(--Rbg);color:var(--R);border-color:var(--Rbd)}
+.co{background:var(--Obg);color:var(--O);border-color:var(--Obd)}
 .chk{display:flex;justify-content:space-between;padding:9px 18px;background:var(--Gbg);border-top:1px dashed var(--Gbd);font-size:11px;color:var(--G);font-weight:600}
 .note{padding:9px 16px;font-size:11px;line-height:1.7;border-top:1px solid}
 .nw{background:var(--Wbg);border-color:var(--Wbd);color:var(--W)}
@@ -75,7 +77,7 @@ tr:last-child td{border-bottom:none}
 .prog{background:var(--card);border:1px solid var(--bd);border-radius:6px;padding:14px 18px;margin-bottom:14px}
 .prog-h{display:flex;justify-content:space-between;font-size:11px;color:var(--i2);margin-bottom:8px;font-weight:600}
 .bar{height:12px;background:var(--c3);border-radius:8px;overflow:hidden}
-.bar i{display:block;height:100%;width:70.5%;background:linear-gradient(90deg,#b08d4a,#e0c37e)}
+.bar i{display:block;height:100%;width:68.2%;background:linear-gradient(90deg,#b08d4a,#e0c37e)}
 .prog-f{display:flex;justify-content:space-between;font-size:10px;color:var(--i3);margin-top:6px}
 @media(max-width:700px){.kpis{grid-template-columns:repeat(2,1fr)}.g2,.db-g{grid-template-columns:1fr}.pane{padding:12px}.hdr-t{flex-direction:column;align-items:flex-start;gap:8px}.hdr-m{text-align:left}}
 </style>
@@ -88,10 +90,10 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 <div class="kpis">
-  <div class="kpi"><div class="kl">Ventas Totales</div><div class="kv g">$1.345.000</div><div class="kd">31 puntos vendidos</div></div>
-  <div class="kpi"><div class="kl">Resultado Neto</div><div class="kv g">$239.545</div><div class="kd">Puntos +$499.545 · Deuda Nancy −$260.000</div></div>
+  <div class="kpi"><div class="kl">Ventas Totales</div><div class="kv g">$1.295.000</div><div class="kd">30 puntos vendidos</div></div>
+  <div class="kpi"><div class="kl">Resultado Neto</div><div class="kv g">$216.818</div><div class="kd">Puntos +$476.818 · Deuda Nancy −$260.000</div></div>
   <div class="kpi"><div class="kl">Caja Actual</div><div class="kv b">$515.000</div><div class="kd">Calculada · pendiente verificar</div></div>
-  <div class="kpi"><div class="kl">Por Cobrar</div><div class="kv w">$670.000</div><div class="kd">14 puntos · vence 15 Nov</div></div>
+  <div class="kpi"><div class="kl">Por Cobrar</div><div class="kv w">$620.000</div><div class="kd">13 puntos · vence 15 Nov</div></div>
   <div class="kpi"><div class="kl">Deudas</div><div class="kv r">$100.000</div><div class="kd">Préstamo Eugenia · sin intereses</div></div>
 </div>
 <div class="tabs">
@@ -107,32 +109,32 @@ tr:last-child td{border-bottom:none}
 <!-- RESUMEN -->
 <div class="pane on" id="tab-db">
   <div class="prog">
-    <div class="prog-h"><span>Avance de ventas</span><span>31 de 44 puntos · 70,5%</span></div>
+    <div class="prog-h"><span>Avance de ventas</span><span>30 de 44 puntos · 68,2%</span></div>
     <div class="bar"><i></i></div>
-    <div class="prog-f"><span>31 vendidos</span><span>13 disponibles</span></div>
+    <div class="prog-f"><span>30 vendidos</span><span>14 disponibles</span></div>
   </div>
   <div class="db-g">
     <div class="db-c"><div class="db-l">Puntos Totales</div><div class="db-v au">44</div><div class="db-s">2 cocinas × 22 puntos</div></div>
-    <div class="db-c"><div class="db-l">Puntos Vendidos</div><div class="db-v pos">31</div><div class="db-s">Felipe 21 · Camilo 10</div></div>
-    <div class="db-c"><div class="db-l">Puntos Disponibles</div><div class="db-v bl">13</div><div class="db-s">Inventario por vender</div></div>
+    <div class="db-c"><div class="db-l">Puntos Vendidos</div><div class="db-v pos">30</div><div class="db-s">Felipe 21 · Camilo 9</div></div>
+    <div class="db-c"><div class="db-l">Puntos Disponibles</div><div class="db-v bl">14</div><div class="db-s">Inventario por vender</div></div>
     <div class="db-c"><div class="db-l">Costo por Punto</div><div class="db-v">$27.273</div><div class="db-s">$1.200.000 ÷ 44 puntos</div></div>
-    <div class="db-c"><div class="db-l">Precio Promedio</div><div class="db-v pos">$43.387</div><div class="db-s">Rango de mercado: $35.000 – $60.000</div></div>
-    <div class="db-c"><div class="db-l">Margen por Punto</div><div class="db-v au">$16.114</div><div class="db-s">37,1% sobre el precio de venta</div></div>
-    <div class="db-c"><div class="db-l">Utilidad de los Puntos</div><div class="db-v pos">$499.545</div><div class="db-s">ROI 41,6% sobre $1.200.000</div></div>
-    <div class="db-c"><div class="db-l">Resultado Neto</div><div class="db-v pos">$239.545</div><div class="db-s">Tras pago deuda Mamá Nancy ($260.000)</div></div>
+    <div class="db-c"><div class="db-l">Precio Promedio</div><div class="db-v pos">$43.167</div><div class="db-s">Rango de mercado: $35.000 – $60.000</div></div>
+    <div class="db-c"><div class="db-l">Margen por Punto</div><div class="db-v au">$15.894</div><div class="db-s">36,8% sobre el precio de venta</div></div>
+    <div class="db-c"><div class="db-l">Utilidad de los Puntos</div><div class="db-v pos">$476.818</div><div class="db-s">ROI 39,7% sobre $1.200.000</div></div>
+    <div class="db-c"><div class="db-l">Resultado Neto</div><div class="db-v pos">$216.818</div><div class="db-s">Tras pago deuda Mamá Nancy ($260.000)</div></div>
     <div class="db-c"><div class="db-l">Deudas</div><div class="db-v neg">$100.000</div><div class="db-s">Eugenia · Mamá Nancy pagada ✓</div></div>
   </div>
   <div class="box">
-    <div class="bh">Proyección de Cierre <em>Si se venden los 13 puntos restantes</em></div>
+    <div class="bh">Proyección de Cierre <em>Si se venden los 14 puntos restantes</em></div>
     <table>
       <thead><tr><th style="text-align:left">Escenario de precio</th><th>Precio/punto</th><th>Ingreso restante</th><th>Ingreso total</th><th>Utilidad puntos</th><th>Resultado neto</th><th>ROI neto</th></tr></thead>
       <tbody>
-      <tr><td>Conservador (mínimo)</td><td class="r">$35.000</td><td class="r">$455.000</td><td class="r">$1.800.000</td><td class="r pos">$600.000</td><td class="r pos">$340.000</td><td class="r au">28,3%</td></tr>
-      <tr><td>Intermedio</td><td class="r">$47.500</td><td class="r">$617.500</td><td class="r">$1.962.500</td><td class="r pos">$762.500</td><td class="r pos">$502.500</td><td class="r au">41,9%</td></tr>
-      <tr><td>Optimista (máximo)</td><td class="r">$60.000</td><td class="r">$780.000</td><td class="r">$2.125.000</td><td class="r pos">$925.000</td><td class="r pos">$665.000</td><td class="r au">55,4%</td></tr>
+      <tr><td>Conservador (mínimo)</td><td class="r">$35.000</td><td class="r">$490.000</td><td class="r">$1.785.000</td><td class="r pos">$585.000</td><td class="r pos">$325.000</td><td class="r au">27,1%</td></tr>
+      <tr><td>Intermedio</td><td class="r">$47.500</td><td class="r">$665.000</td><td class="r">$1.960.000</td><td class="r pos">$760.000</td><td class="r pos">$500.000</td><td class="r au">41,7%</td></tr>
+      <tr><td>Optimista (máximo)</td><td class="r">$60.000</td><td class="r">$840.000</td><td class="r">$2.135.000</td><td class="r pos">$935.000</td><td class="r pos">$675.000</td><td class="r au">56,3%</td></tr>
       </tbody>
     </table>
-    <div class="note na">Las ventas ya realizadas (31 puntos, $1.345.000) se mantienen. La proyección solo varía el precio de los 13 puntos que aún no se venden. Resultado neto = utilidad de los puntos − $260.000 del pago de la deuda de Mamá Nancy. La inversión de $1.200.000 ya está cubierta por las ventas registradas (aunque $670.000 siguen por cobrar); para cubrir además el pago de Mamá Nancy ($1.460.000 en total) faltan $115.000, es decir ~$8.846 por cada uno de los 13 puntos restantes. Antes de comisiones y gastos de envío.</div>
+    <div class="note na">Las ventas ya realizadas (30 puntos, $1.295.000) se mantienen. La proyección solo varía el precio de los 14 puntos que aún no se venden. Resultado neto = utilidad de los puntos − $260.000 del pago de la deuda de Mamá Nancy. La inversión de $1.200.000 ya está cubierta por las ventas registradas (aunque $620.000 siguen por cobrar); para cubrir además el pago de Mamá Nancy ($1.460.000 en total) faltan $165.000, es decir ~$11.786 por cada uno de los 14 puntos restantes. Antes de comisiones y gastos de envío.</div>
   </div>
 </div>
 
@@ -144,8 +146,8 @@ tr:last-child td{border-bottom:none}
       <thead><tr><th style="text-align:left">Vendedor</th><th>Vendidos</th><th>Pagados</th><th>Pendientes</th><th>Precio prom.</th><th>Total vendido</th><th>Cobrado</th><th>Por cobrar</th></tr></thead>
       <tbody>
       <tr><td>Felipe Vargas</td><td class="r">21</td><td class="r pos">11</td><td class="r warn">10</td><td class="r">$43.810</td><td class="r">$920.000</td><td class="r pos">$450.000</td><td class="r warn">$470.000</td></tr>
-      <tr><td>Camilo Cuellar</td><td class="r">10</td><td class="r pos">6</td><td class="r warn">4</td><td class="r">$42.500</td><td class="r">$425.000</td><td class="r pos">$225.000</td><td class="r warn">$200.000</td></tr>
-      <tr class="rtot"><td><strong>TOTAL</strong></td><td class="r"><strong>31</strong></td><td class="r pos"><strong>17</strong></td><td class="r warn"><strong>14</strong></td><td class="r"><strong>$43.387</strong></td><td class="r"><strong>$1.345.000</strong></td><td class="r pos"><strong>$675.000</strong></td><td class="r warn"><strong>$670.000</strong></td></tr>
+      <tr><td>Camilo Cuellar</td><td class="r">9</td><td class="r pos">6</td><td class="r warn">3</td><td class="r">$41.667</td><td class="r">$375.000</td><td class="r pos">$225.000</td><td class="r warn">$150.000</td></tr>
+      <tr class="rtot"><td><strong>TOTAL</strong></td><td class="r"><strong>30</strong></td><td class="r pos"><strong>17</strong></td><td class="r warn"><strong>13</strong></td><td class="r"><strong>$43.167</strong></td><td class="r"><strong>$1.295.000</strong></td><td class="r pos"><strong>$675.000</strong></td><td class="r warn"><strong>$620.000</strong></td></tr>
       </tbody>
     </table>
   </div>
@@ -162,11 +164,11 @@ tr:last-child td{border-bottom:none}
       <tr><td>Camilo Cuellar</td><td>2 puntos × $35.000</td><td class="r">2</td><td class="r pos">$70.000</td><td class="r"><span class="chip cg">COBRADO ✓</span></td></tr>
       <tr><td>Camilo Cuellar</td><td>1 punto × $50.000 (pago de la deuda anterior)</td><td class="r">1</td><td class="r pos">$50.000</td><td class="r"><span class="chip cg">COBRADO ✓</span></td></tr>
       <tr><td>Camilo Cuellar</td><td>3 puntos × $35.000 (venta del 02/11)</td><td class="r">3</td><td class="r pos">$105.000</td><td class="r"><span class="chip cg">COBRADO ✓</span></td></tr>
-      <tr><td>Camilo Cuellar</td><td>1 punto × $50.000 (deuda anterior, sin pagar)</td><td class="r">1</td><td class="r warn">$50.000</td><td class="r"><span class="chip cr2">Vencido 31/10</span> <span class="chip cw">Est. 15/11</span></td></tr>
-      <tr><td>Camilo Cuellar</td><td>3 puntos × $50.000 (venta nueva)</td><td class="r">3</td><td class="r warn">$150.000</td><td class="r"><span class="chip cw">Vence 15/11</span></td></tr>
+      <tr><td>Camilo Cuellar</td><td>1 punto × $50.000 (deuda anterior, sin pagar)</td><td class="r">1</td><td class="r warn">$50.000</td><td class="r"><span class="chip cr2">Venció 31/10</span> <span class="chip cw">Est. 15/11</span></td></tr>
+      <tr><td>Camilo Cuellar</td><td>2 puntos × $50.000 (venta nueva)</td><td class="r">2</td><td class="r warn">$100.000</td><td class="r"><span class="chip cw">Vence 15/11</span></td></tr>
       </tbody>
     </table>
-    <div class="note nw">⚠ El 15 de noviembre se espera cobrar $670.000 en total (14 puntos): Felipe $470.000 y Camilo $200.000. Los $50.000 de Camilo de la deuda anterior ya están vencidos desde el 31/10. Las comisiones a vendedores aún no están registradas (ver Nota 8).</div>
+    <div class="note nw">⚠ El 15 de noviembre se espera cobrar $620.000 en total (13 puntos): Felipe $470.000 y Camilo $150.000. De los $150.000 de Camilo, $50.000 corresponden a la deuda anterior que venció el 31/10. Las comisiones a vendedores aún no están registradas (ver Nota 8).</div>
   </div>
   <div class="box">
     <div class="bh">Pagos Recibidos desde el Corte Anterior <em>24 Oct → 3 Nov 2026</em></div>
@@ -175,7 +177,7 @@ tr:last-child td{border-bottom:none}
       <tbody>
       <tr><td>30/10</td><td>Felipe Vargas</td><td>Pago</td><td class="r pos">$150.000</td></tr>
       <tr><td>31/10</td><td>Felipe Vargas</td><td>Pago ($180.000 deuda anterior + $130.000 venta nueva, en total $310.000 con el del 30/10)</td><td class="r pos">$160.000</td></tr>
-      <tr><td>31/10</td><td>Camilo Cuellar</td><td>Pago único sobre los $100.000 vencidos el 31/10</td><td class="r pos">$50.000</td></tr>
+      <tr><td>31/10</td><td>Camilo Cuellar</td><td>Pago único sobre los $100.000 que vencían el 31/10</td><td class="r pos">$50.000</td></tr>
       <tr><td>02/11</td><td>Camilo Cuellar</td><td>Venta de 3 puntos pagada</td><td class="r pos">$105.000</td></tr>
       <tr class="rtot"><td colspan="3"><strong>TOTAL RECIBIDO</strong></td><td class="r pos"><strong>$465.000</strong></td></tr>
       </tbody>
@@ -222,12 +224,12 @@ tr:last-child td{border-bottom:none}
         <tr class="rg"><td colspan="2">Activo Corriente</td></tr>
         <tr><td class="i1">Caja y Equivalentes <span class="chip ca">Nota 3</span></td><td class="r bl">$515.000</td></tr>
         <tr><td class="i1">CXC — Felipe Vargas <span class="chip cw">15/11</span></td><td class="r warn">$470.000</td></tr>
-        <tr><td class="i1">CXC — Camilo Cuellar <span class="chip cw">15/11</span> <span class="chip cr2">$50.000 vencidos</span></td><td class="r warn">$200.000</td></tr>
-        <tr class="rsub"><td><strong>Total Activo Corriente</strong></td><td class="r"><strong>$1.185.000</strong></td></tr>
+        <tr><td class="i1">CXC — Camilo Cuellar <span class="chip cw">15/11</span> <span class="chip cr2">incl. $50.000 vencidos</span></td><td class="r warn">$150.000</td></tr>
+        <tr class="rsub"><td><strong>Total Activo Corriente</strong></td><td class="r"><strong>$1.135.000</strong></td></tr>
         <tr class="rg"><td colspan="2">Inventarios <span style="letter-spacing:0;text-transform:none;color:var(--i3)">Nota 5</span></td></tr>
-        <tr><td class="i1">Puntos disponibles — 13 uds. × $27.273</td><td class="r au">$354.545</td></tr>
-        <tr class="rsub"><td><strong>Total Inventarios</strong></td><td class="r"><strong>$354.545</strong></td></tr>
-        <tr class="rfin"><td><strong>TOTAL ACTIVOS</strong></td><td class="r" style="color:#e8d29b"><strong>$1.539.545</strong></td></tr>
+        <tr><td class="i1">Puntos disponibles — 14 uds. × $27.273</td><td class="r au">$381.818</td></tr>
+        <tr class="rsub"><td><strong>Total Inventarios</strong></td><td class="r"><strong>$381.818</strong></td></tr>
+        <tr class="rfin"><td><strong>TOTAL ACTIVOS</strong></td><td class="r" style="color:#e8d29b"><strong>$1.516.818</strong></td></tr>
       </tbody></table>
     </div>
     <div class="box box0">
@@ -239,13 +241,13 @@ tr:last-child td{border-bottom:none}
         <tr class="rsub"><td><strong>Total Pasivos</strong></td><td class="r neg"><strong>$100.000</strong></td></tr>
         <tr class="rg"><td colspan="2">Patrimonio <span style="letter-spacing:0;text-transform:none;color:var(--i3)">Nota 7</span></td></tr>
         <tr><td class="i1">Capital aportado por socios — 2 cocinas</td><td class="r">$1.200.000</td></tr>
-        <tr><td class="i1">Utilidad de los puntos</td><td class="r pos">$499.545</td></tr>
+        <tr><td class="i1">Utilidad de los puntos</td><td class="r pos">$476.818</td></tr>
         <tr><td class="i1">Pago deuda Mamá Nancy (no operacional)</td><td class="r neg">($260.000)</td></tr>
-        <tr class="rsub"><td class="i1"><strong>Resultado Acumulado</strong></td><td class="r pos"><strong>$239.545</strong></td></tr>
-        <tr class="rsub"><td><strong>Total Patrimonio</strong></td><td class="r"><strong>$1.439.545</strong></td></tr>
-        <tr class="rfin"><td><strong>TOTAL PAS. + PATRIMONIO</strong></td><td class="r" style="color:#e8d29b"><strong>$1.539.545</strong></td></tr>
+        <tr class="rsub"><td class="i1"><strong>Resultado Acumulado</strong></td><td class="r pos"><strong>$216.818</strong></td></tr>
+        <tr class="rsub"><td><strong>Total Patrimonio</strong></td><td class="r"><strong>$1.416.818</strong></td></tr>
+        <tr class="rfin"><td><strong>TOTAL PAS. + PATRIMONIO</strong></td><td class="r" style="color:#e8d29b"><strong>$1.516.818</strong></td></tr>
       </tbody></table>
-      <div class="chk"><span>$1.539.545 = $100.000 + $1.439.545</span><span>✓ CUADRA</span></div>
+      <div class="chk"><span>$1.516.818 = $100.000 + $1.416.818</span><span>✓ CUADRA</span></div>
     </div>
   </div>
 </div>
@@ -257,24 +259,24 @@ tr:last-child td{border-bottom:none}
     <table><tbody>
       <tr class="rg"><td colspan="3">Ingresos por Venta de Puntos</td></tr>
       <tr><td class="i1">Felipe Vargas — 21 puntos (4×$35.000 + 7×$40.000 + 10×$50.000)</td><td><span class="chip cw">10 por cobrar</span></td><td class="r pos">$920.000</td></tr>
-      <tr><td class="i1">Camilo Cuellar — 10 puntos (5×$35.000 + 5×$50.000)</td><td><span class="chip cw">4 por cobrar</span></td><td class="r pos">$425.000</td></tr>
-      <tr class="rsub"><td colspan="2"><strong>Total Ventas</strong></td><td class="r pos"><strong>$1.345.000</strong></td></tr>
+      <tr><td class="i1">Camilo Cuellar — 9 puntos (5×$35.000 + 4×$50.000)</td><td><span class="chip cw">3 por cobrar</span></td><td class="r pos">$375.000</td></tr>
+      <tr class="rsub"><td colspan="2"><strong>Total Ventas</strong></td><td class="r pos"><strong>$1.295.000</strong></td></tr>
       <tr class="rg"><td colspan="3">Costo de Ventas</td></tr>
-      <tr><td class="i1">31 puntos × $27.273 (costo promedio)</td><td></td><td class="r neg">($845.455)</td></tr>
-      <tr class="rsub"><td colspan="2"><strong>Total Costo de Ventas</strong></td><td class="r neg"><strong>($845.455)</strong></td></tr>
-      <tr class="rtot"><td colspan="2"><strong>UTILIDAD BRUTA</strong> <span style="font-size:10px;font-weight:400;color:var(--i3)">Margen 37,1%</span></td><td class="r pos"><strong>$499.545</strong></td></tr>
+      <tr><td class="i1">30 puntos × $27.273 (costo promedio)</td><td></td><td class="r neg">($818.182)</td></tr>
+      <tr class="rsub"><td colspan="2"><strong>Total Costo de Ventas</strong></td><td class="r neg"><strong>($818.182)</strong></td></tr>
+      <tr class="rtot"><td colspan="2"><strong>UTILIDAD BRUTA</strong> <span style="font-size:10px;font-weight:400;color:var(--i3)">Margen 36,8%</span></td><td class="r pos"><strong>$476.818</strong></td></tr>
       <tr class="rg"><td colspan="3">Gastos Operacionales</td></tr>
       <tr><td class="i1">Comisiones a vendedores</td><td><span class="chip cw">Pendiente de registrar</span></td><td class="r mu">$0</td></tr>
       <tr><td class="i1">Domicilios y envíos</td><td><span class="chip cw">Pendiente de registrar</span></td><td class="r mu">$0</td></tr>
       <tr class="rsub"><td colspan="2"><strong>Total Gastos Operacionales</strong></td><td class="r"><strong>$0</strong></td></tr>
-      <tr class="rtot"><td colspan="2"><strong>UTILIDAD OPERACIONAL DE LOS PUNTOS</strong></td><td class="r pos"><strong>$499.545</strong></td></tr>
+      <tr class="rtot"><td colspan="2"><strong>UTILIDAD OPERACIONAL DE LOS PUNTOS</strong></td><td class="r pos"><strong>$476.818</strong></td></tr>
       <tr class="rg"><td colspan="3">Otros Gastos No Operacionales</td></tr>
       <tr><td class="i1">Pago deuda Mamá Nancy (deuda ajena a las cocinas) <span class="chip co">Nota 6</span></td><td></td><td class="r neg">($260.000)</td></tr>
       <tr class="rg"><td colspan="3">Gastos Financieros</td></tr>
       <tr><td class="i1">Intereses préstamo Eugenia <span class="chip cg">Sin intereses</span></td><td></td><td class="r mu">$0</td></tr>
-      <tr class="rfin"><td colspan="2"><strong>RESULTADO NETO ACUMULADO</strong></td><td class="r" style="color:#e8d29b"><strong>$239.545</strong></td></tr>
+      <tr class="rfin"><td colspan="2"><strong>RESULTADO NETO ACUMULADO</strong></td><td class="r" style="color:#e8d29b"><strong>$216.818</strong></td></tr>
     </tbody></table>
-    <div class="note na">📈 La operación de los puntos tiene una utilidad de $499.545 (ROI de 41,6% sobre la inversión de $1.200.000), con el 70,5% de los puntos vendidos. Tras el pago de la deuda de Mamá Nancy ($260.000, no relacionada con las cocinas), el resultado neto es de $239.545 (20,0% sobre el capital). Se reducirá al registrar comisiones y gastos de envío. Ver proyección en la pestaña Resumen.</div>
+    <div class="note na">📈 La operación de los puntos tiene una utilidad de $476.818 (ROI de 39,7% sobre la inversión de $1.200.000), con el 68,2% de los puntos vendidos. Tras el pago de la deuda de Mamá Nancy ($260.000, no relacionada con las cocinas), el resultado neto es de $216.818 (18,1% sobre el capital). Se reducirá al registrar comisiones y gastos de envío. Ver proyección en la pestaña Resumen.</div>
   </div>
 </div>
 
@@ -299,11 +301,11 @@ tr:last-child td{border-bottom:none}
       <tbody>
       <tr><td>Puntos producidos</td><td class="r">44</td><td class="r">$27.273</td><td class="r">$1.200.000</td></tr>
       <tr><td>Puntos vendidos — Felipe Vargas</td><td class="r neg">(21)</td><td class="r">$27.273</td><td class="r neg">($572.727)</td></tr>
-      <tr><td>Puntos vendidos — Camilo Cuellar</td><td class="r neg">(10)</td><td class="r">$27.273</td><td class="r neg">($272.728)</td></tr>
-      <tr class="rtot"><td><strong>PUNTOS DISPONIBLES</strong></td><td class="r"><strong>13</strong></td><td class="r"><strong>$27.273</strong></td><td class="r au"><strong>$354.545</strong></td></tr>
+      <tr><td>Puntos vendidos — Camilo Cuellar</td><td class="r neg">(9)</td><td class="r">$27.273</td><td class="r neg">($245.455)</td></tr>
+      <tr class="rtot"><td><strong>PUNTOS DISPONIBLES</strong></td><td class="r"><strong>14</strong></td><td class="r"><strong>$27.273</strong></td><td class="r au"><strong>$381.818</strong></td></tr>
       </tbody>
     </table>
-    <div class="note na">📦 13 puntos disponibles para vender, con un valor potencial entre $455.000 (a $35.000) y $780.000 (a $60.000).</div>
+    <div class="note na">📦 14 puntos disponibles para vender, con un valor potencial entre $490.000 (a $35.000) y $840.000 (a $60.000).</div>
   </div>
 </div>
 
@@ -312,12 +314,12 @@ tr:last-child td{border-bottom:none}
   <div class="nota"><div class="nh"><span><span class="nn">NOTA 1</span>Información General</span></div><div class="nb2">Penthouse es una comercializadora de puntos, producto que se genera a partir de cocinas. Se invirtió en 2 cocinas de $600.000 cada una (total $1.200.000 COP), que generaron 22 puntos cada una, para un total de 44 puntos. La inversión corresponde al capital aportado por los socios. La venta se realiza a través de vendedores (Felipe Vargas y Camilo Cuellar). Fecha de corte: 3 de noviembre de 2026.</div></div>
   <div class="nota"><div class="nh"><span><span class="nn">NOTA 2</span>Políticas Contables</span></div><div class="nb2"><strong>Base:</strong> NIIF para Pymes. <strong>Moneda:</strong> COP. <strong>Inventarios:</strong> costo promedio por punto = $1.200.000 ÷ 44 = $27.273. <strong>Ingresos:</strong> reconocidos al momento de la venta del punto, aunque el cobro sea posterior. <strong>Precio de venta:</strong> varía por punto entre $35.000 y $60.000; se registra el precio pactado de cada venta. <strong>Deudas ajenas a la operación:</strong> el pago de obligaciones contraídas para fines distintos a las cocinas se reconoce como gasto no operacional y no forma parte del capital de los socios.</div></div>
   <div class="nota"><div class="nh"><span><span class="nn">NOTA 3</span>Caja y Equivalentes</span><span class="bl">$515.000</span></div><div class="nb2">Saldo calculado al 3 de noviembre de 2026: saldo del corte anterior $50.000, más cobros de Felipe Vargas por $310.000 ($150.000 el 30/10 y $160.000 el 31/10) y de Camilo Cuellar por $155.000 ($50.000 por la deuda vencida y $105.000 por la venta del 02/11) = <strong>$515.000</strong>. Incluye $5.000 sobrantes del préstamo de Eugenia. Aún no se ha pagado a Eugenia ni a los vendedores. Saldo pendiente de verificar.</div></div>
-  <div class="nota"><div class="nh"><span><span class="nn">NOTA 4</span>Cuentas por Cobrar</span><span class="warn">$670.000</span></div><div class="nb2"><strong>Felipe Vargas ($470.000):</strong> 7 puntos × $50.000 + 3 puntos × $40.000, con pago acordado para el 15 de noviembre de 2026. <strong>Camilo Cuellar ($200.000):</strong> $50.000 de la deuda anterior (1 punto × $50.000, vencido el 31/10 y con pago estimado para el 15/11) + 3 puntos × $50.000 = $150.000 con pago acordado para el 15 de noviembre de 2026. Los $180.000 de la deuda anterior de Felipe y los $130.000 de su venta nueva ya fueron pagados.</div></div>
-  <div class="nota"><div class="nh"><span><span class="nn">NOTA 5</span>Inventarios</span><span class="bl">$354.545</span></div><div class="nb2">Quedan 13 puntos disponibles valorados al costo promedio de $27.273. Los precios de mercado de los puntos varían entre $35.000 y $60.000; el precio promedio de las ventas realizadas es de $43.387.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 4</span>Cuentas por Cobrar</span><span class="warn">$620.000</span></div><div class="nb2"><strong>Felipe Vargas ($470.000):</strong> 7 puntos × $50.000 + 3 puntos × $40.000, con pago acordado para el 15 de noviembre de 2026. <strong>Camilo Cuellar ($150.000):</strong> 3 puntos × $50.000, con pago acordado para el 15 de noviembre de 2026. De ese valor, $50.000 (1 punto) corresponden a la deuda anterior que venció el 31/10 y quedó incluida en el pago estimado del 15/11; los otros $100.000 son de la venta nueva de 2 puntos. Los $180.000 de la deuda anterior de Felipe y los $130.000 de su venta nueva ya fueron pagados.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 5</span>Inventarios</span><span class="bl">$381.818</span></div><div class="nb2">Quedan 14 puntos disponibles valorados al costo promedio de $27.273. Los precios de mercado de los puntos varían entre $35.000 y $60.000; el precio promedio de las ventas realizadas es de $43.167.</div></div>
   <div class="nota"><div class="nh"><span><span class="nn">NOTA 6</span>Deudas y Préstamos</span><span class="neg">$100.000</span></div><div class="nb2"><strong>Mamá Nancy:</strong> deuda de $260.000 adquirida para fines distintos a las cocinas; cancelada en su totalidad con $165.000 de la caja de la empresa y $95.000 provenientes del préstamo de Eugenia. Al no estar relacionada con la inversión ni con el capital de los socios, su pago se reconoce como gasto no operacional por $260.000. <strong>Eugenia:</strong> préstamo de $100.000 recibido para completar el pago a Mamá Nancy. Saldo pendiente: <strong>$100.000</strong>, sin intereses y sin fecha de pago definida; aún no se ha pagado. Al cancelarse: Db. Préstamo Eugenia / Cr. Caja.</div></div>
-  <div class="nota"><div class="nh"><span><span class="nn">NOTA 7</span>Patrimonio</span><span class="bl">$1.439.545</span></div><div class="nb2">El patrimonio se compone del capital aportado por los socios ($1.200.000, equivalente a las dos cocinas) y el resultado acumulado de $239.545, que incluye la utilidad de los puntos ($499.545) menos el pago de la deuda de Mamá Nancy ($260.000). La deuda de Mamá Nancy no forma parte del capital de los socios. No se ha definido distribución entre socios.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 7</span>Patrimonio</span><span class="bl">$1.416.818</span></div><div class="nb2">El patrimonio se compone del capital aportado por los socios ($1.200.000, equivalente a las dos cocinas) y el resultado acumulado de $216.818, que incluye la utilidad de los puntos ($476.818) menos el pago de la deuda de Mamá Nancy ($260.000). La deuda de Mamá Nancy no forma parte del capital de los socios. No se ha definido distribución entre socios.</div></div>
   <div class="nota"><div class="nh"><span><span class="nn">NOTA 8</span>Comisiones y Gastos — Pendientes de Registro</span></div><div class="nb2"><strong>Comisiones a vendedores:</strong> aún no se ha pagado ninguna comisión ni se han registrado en la contabilidad; los valores ya están definidos y se registrarán en la próxima actualización. <strong>Domicilios y envíos:</strong> pendientes de registrar. Al registrarse, se reconocerán como gastos operacionales y reducirán el resultado. <strong>Intereses:</strong> el préstamo de Eugenia es sin intereses.</div></div>
-  <div class="nota"><div class="nh"><span><span class="nn">NOTA 9</span>Eventos Posteriores</span></div><div class="nb2">El 15 de noviembre de 2026 se estima el cobro de $670.000 (Felipe $470.000 y Camilo $200.000, de los cuales $50.000 vencieron el 31/10). Con su recaudo, la caja pasaría de $515.000 a $1.185.000; tras pagar a Eugenia ($100.000) quedaría en $1.085.000, sin deudas. Estas cifras aún no descuentan comisiones ni gastos de envío.</div></div>
+  <div class="nota"><div class="nh"><span><span class="nn">NOTA 9</span>Eventos Posteriores</span></div><div class="nb2">El 15 de noviembre de 2026 se estima el cobro de $620.000 (Felipe $470.000 y Camilo $150.000, de los cuales $50.000 vencieron el 31/10). Con su recaudo, la caja pasaría de $515.000 a $1.135.000; tras pagar a Eugenia ($100.000) quedaría en $1.035.000, sin deudas. Estas cifras aún no descuentan comisiones ni gastos de envío.</div></div>
 </div>
 
 <script>
